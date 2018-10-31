@@ -1,3 +1,5 @@
+require 'pry'
+
 RSpec.describe "Person" do
 
   let(:stella) { Person.new("Stella") }
@@ -49,6 +51,7 @@ RSpec.describe "Person" do
           people.each do |person|
             original_happiness = person.happiness
             person.happiness += 1
+            # binding.pry
             expect(person.happiness).to eq(original_happiness + 1)
           end
         end
